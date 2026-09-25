@@ -249,19 +249,19 @@
       <h2>2. 기본 제품 장수 입력</h2>
 
       <p class="small">
-        750size / 1300size 장수를 입력하면
+        600size / 1300size 장수를 입력하면
         현금가·카드가 견적이 자동 계산됩니다.
       </p>
 
       <div class="row">
         <div>
-          <label for="qty750">750size 예상장수</label>
+          <label for="qty600">600size 예상장수</label>
           <input
-            id="qty750"
+            id="qty600"
             type="number"
             min="0"
             step="0.5"
-            placeholder="예: 70"
+            placeholder="예: 114"
           >
         </div>
 
@@ -297,8 +297,8 @@
   </div>
 
   <script>
-    const PRICE_750_CASH = 41000;
-    const PRICE_750_CARD = 45000;
+    const PRICE_600_CASH = 25000;
+    const PRICE_600_CARD = 27000;
     const PRICE_1300_CASH = 139000;
     const PRICE_1300_CARD = 149000;
 
@@ -524,7 +524,7 @@
       ).value = "거실";
 
       document.getElementById(
-        "qty750"
+        "qty600"
       ).value = "";
 
       document.getElementById(
@@ -581,8 +581,8 @@
             "customSpace"
           );
 
-        const qty750 =
-          getNumber("qty750");
+        const qty600 =
+          getNumber("qty600");
 
         const qty1300 =
           getNumber("qty1300");
@@ -621,11 +621,11 @@
           return;
         }
 
-        const cash750 =
-          qty750 * PRICE_750_CASH;
+        const cash600 =
+          qty600 * PRICE_600_CASH;
 
-        const card750 =
-          qty750 * PRICE_750_CARD;
+        const card600 =
+          qty600 * PRICE_600_CARD;
 
         const cash1300 =
           qty1300 * PRICE_1300_CASH;
@@ -716,13 +716,13 @@
         );
 
         /*
-         * 750 견적 출력
+         * 600 견적 출력
          */
         const priceX = 830;
 
         drawRight(
           ctx,
-          qty750 ? `${qty750}장` : "",
+          qty600 ? `${qty600}장` : "",
           priceX,
           1118,
           34
@@ -730,7 +730,7 @@
 
         drawRight(
           ctx,
-          won(PRICE_750_CASH),
+          won(PRICE_600_CASH),
           priceX,
           1184,
           34
@@ -738,7 +738,7 @@
 
         drawRight(
           ctx,
-          won(PRICE_750_CARD),
+          won(PRICE_600_CARD),
           priceX,
           1250,
           34
@@ -746,7 +746,7 @@
 
         drawRight(
           ctx,
-          qty750 ? won(cash750) : "",
+          qty600 ? won(cash600) : "",
           priceX,
           1316,
           34
@@ -754,7 +754,7 @@
 
         drawRight(
           ctx,
-          qty750 ? won(card750) : "",
+          qty600 ? won(card600) : "",
           priceX,
           1382,
           34
